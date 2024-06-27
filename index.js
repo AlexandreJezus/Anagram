@@ -1,25 +1,17 @@
-let entrada = "";
-entrada = entrada.split("");
-let anagrama = "";
-
-console.log("Digite uma palavra para fazer o anagrama.");
-
+console.log("Digite uma palavra: ");
+let anagramas = [];
 process.stdin.on("data", function (data) {
-  (palavra = data), toString().trim();
-
-  palavra = palavra.splice("");
-
-  for (let i = 0; i < palavra.length; i++) {
-    for (let j = 0; j < palavra.length; j++) {
-      let aux = palavra[i];
-      palavra[i] = palavra[j];
-      palavra[j] = aux;
-
-      anagramas.push(palavra.join(""));
-
-      if (!anagramas.includes(palavra.join("")))
-        anagramas.push(palavra.join(""));
-      console.log(palavra.join(""));
+  let word = data.toString().trim();
+  word = word.split("");
+  for (let i = 0; i < word.length; i++) {
+    for (let j = 0; j < word.length; j++) {
+      let aux = word[i];
+      word[i] = word[j];
+      word[j] = aux;
+      if (!anagramas.includes(word.join(""))) {
+        anagramas.push(word.join(""));
+        console.log(word.join(""));
+      }
     }
   }
 });
