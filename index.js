@@ -1,8 +1,14 @@
-let palavra;
+
+=======
+let entrada = "";
+entrada = entrada.split("");
+let anagrama = "";
+
 
 console.log("Digite uma palavra para fazer o anagrama.");
 
-process.stdin.on("data", function (data) {
+process.stdin.on("data", function (data) { 
+                 
   (palavra = data), toString().trim();
 
   palavra = palavra.split("");
